@@ -1,0 +1,6 @@
+lisa-design:
+- All shared workflow refs (ci-ui, release-checks, notify-failure, release-please, release-ui, preview) and workflows-ref pinned to the same full SHA 084cc5d5ee6a40455f84b4f3108cfb254654ae28 (head of workflows#12) rather than @v1, which doesn't carry the release workflows yet.
+- release-please-config.json copies every key of release-please/defaults.json verbatim (release-please has no remote extends; the shared workflow warns on drift) and adds packages {".": release-type node}; manifest seeded at 0.0.0 to match package.json.
+- ci.yml pull_request types gain labeled/unlabeled because release-checks reads labels from the event (release:major-approved); notify needs both ci and release-checks.
+- release.yml and preview.yml pass images explicitly as [{"name":"mock-ui","dockerfile":"Dockerfile"}] (equal to the defaults) so the image name is visible in the caller.
+- release-checks needs no secrets, so it does not use secrets: inherit.
