@@ -1,0 +1,10 @@
+lisa-design:
+- Plain Vite + TypeScript, no Vue: the spec asks for a minimal Vite + TS app and the release workflows only need the npm scripts, Dockerfile and version file, not a framework.
+- src/api-version.json shape is {"mockApi": "<tag>"}; ccf-bump's ui updater runs scripts/sync-mock-api-version.sh <tag> rather than editing the JSON, so the script is the interface, not the key name.
+- The sync script is offline (no GitHub lookup) and only validates the tag shape vX.Y.Z or vX.Y.Z-rcN; resolving the latest release is ccf-bump's job.
+- Initial pin is v0.0.0 because mock-api has no tags yet.
+- The script writes the JSON in Prettier's format so a sync never breaks format:check.
+- build runs type-check first, mirroring ui's run-p type-check build-only.
+- Lint and format cover the whole repo (eslint ., prettier --check .), unlike ui's src/-only, since the repo is tiny.
+- Dependency majors follow ui (vite 6, vitest 4, eslint 9, prettier 3, typescript ~5.6) so the mock behaves like ui under the same Node 20 toolchain.
+- No GitHub workflows: a later task adds them.
