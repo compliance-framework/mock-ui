@@ -4,3 +4,6 @@ lisa-design:
 - ci.yml pull_request types gain labeled/unlabeled because release-checks reads labels from the event (release:major-approved); notify needs both ci and release-checks.
 - release.yml and preview.yml pass images explicitly as [{"name":"mock-ui","dockerfile":"Dockerfile"}] (equal to the defaults) so the image name is visible in the caller.
 - release-checks needs no secrets, so it does not use secrets: inherit.
+
+lisa-selfreview:
+- pass 1: [should-fix] CORE-DOC-001 README.md does not describe the release/preview flow added by this PR (fp 6e97ec1af84d) -> fix
