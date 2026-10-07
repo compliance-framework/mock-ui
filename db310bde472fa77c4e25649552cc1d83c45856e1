@@ -1,2 +1,5 @@
 lisa-addressed:
 - CORE-DOC-001 (fp 6e97ec1af84d): added a Releases section to README.md describing release-please, release, preview and release-checks.
+
+lisa-selfreview:
+- pass 2: [must-fix] X:correctness/node-release-tag-has-component release-please-config.json (fp e6ff18daf83e): node release-type tags mock-ui-vX.Y.Z by default (component = package.json name, include-component-in-tag defaults true); release-ui.yml with tag-prefix v rejects it -> fix
