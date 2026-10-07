@@ -1,0 +1,4 @@
+lisa-design:
+- Shared workflows pinned to full SHA 87edd2b700d6dc6de8d49c1f44e525dd39e4db31 (head of compliance-framework/workflows#7) for the W1-S1 trial, not @v1; notify's workflows-ref must equal that SHA.
+- ci-ui.yml called with default inputs: test-script `test` matches mock-ui's script, Node comes from .nvmrc.
+- Top-level permissions: {}; each job grants only what the workflows README documents (ci: actions/contents/pull-requests read + security-events write; notify: actions/contents read).
