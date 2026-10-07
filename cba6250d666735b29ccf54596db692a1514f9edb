@@ -1,0 +1,2 @@
+lisa-design:
+- Ignore CHANGELOG.md and .release-please-manifest.json in prettier rather than reformatting them: release-please regenerates both on every release PR, so any manual formatting would be overwritten and ci / node would fail again.
