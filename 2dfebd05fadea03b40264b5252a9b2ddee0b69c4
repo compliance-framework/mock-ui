@@ -1,0 +1,2 @@
+lisa-addressed:
+- X:correctness/node-release-tag-has-component (fp e6ff18daf83e): set "include-component-in-tag": false on the "." package so release-please tags vX.Y.Z, matching release-ui.yml's tag-prefix v.
