@@ -8,3 +8,9 @@ lisa-design:
 - Lint and format cover the whole repo (eslint ., prettier --check .), unlike ui's src/-only, since the repo is tiny.
 - Dependency majors follow ui (vite 6, vitest 4, eslint 9, prettier 3, typescript ~5.6) so the mock behaves like ui under the same Node 20 toolchain.
 - No GitHub workflows: a later task adds them.
+
+lisa-selfreview:
+pass 1 (strict):
+- [must-fix CORE-TEST-001 507a3b80e21b] scripts/sync-mock-api-version.sh has no automated test.
+- [nit 57ff58ebfaba] eslint.config.js uses deprecated tseslint.config(); use defineConfig from eslint/config.
+- [nit 2f11ba9a5c65] src/version.ts exports RELEASE_TAG only for the test.
