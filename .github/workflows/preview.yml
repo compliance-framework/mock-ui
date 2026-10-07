@@ -1,0 +1,26 @@
+name: preview
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    # Pinned to the head of compliance-framework/workflows#12.
+    uses: compliance-framework/workflows/.github/workflows/preview.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    with:
+      kind: image
+      on-main: true
+      images: '[{"name": "mock-ui", "dockerfile": "Dockerfile"}]'
+    permissions:
+      contents: read
+      packages: write
