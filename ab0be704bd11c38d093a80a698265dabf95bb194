@@ -3,3 +3,6 @@ pass 1:
 - [must-fix CORE-TEST-001] Added Vitest cases for scripts/sync-mock-api-version.sh (writes valid tags, rejects bad/missing tags and leaves the file unchanged), run against a temp copy. Added @types/node and "node" to tsconfig types for the node: imports.
 - [nit] eslint.config.js uses defineConfig from eslint/config.
 - [nit] RELEASE_TAG moved from src/version.ts into the test.
+
+lisa-design:
+- The script tests run the script against a temp copy of scripts/ + src/ (it writes relative to its own directory), so tests never touch the committed src/api-version.json.
