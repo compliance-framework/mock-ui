@@ -12,8 +12,8 @@ concurrency:
 
 jobs:
   release-please:
-    # Tracks the top branch of the compliance-framework/workflows stack until it merges.
-    uses: compliance-framework/workflows/.github/workflows/release-please.yml@ra/w1-s1-t05b-repo-settings-workflow
+    # Tracks compliance-framework/workflows main until v1 is tagged.
+    uses: compliance-framework/workflows/.github/workflows/release-please.yml@main
     permissions:
       contents: read
     secrets: inherit
