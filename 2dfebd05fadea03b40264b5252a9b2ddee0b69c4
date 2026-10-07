@@ -3,3 +3,6 @@ lisa-addressed:
 
 lisa-design:
 - packages."." sets include-component-in-tag: false (beyond the spec's {"release-type":"node"}) because the node strategy otherwise tags mock-ui-vX.Y.Z, which release-ui.yml/cut-prerelease.yml (tag-prefix v) reject. Chosen over passing tag-prefix mock-ui-v to keep the org-wide vX.Y.Z tag convention.
+
+lisa-selfreview:
+- pass 3: approve, no findings (prettier --check and actionlint clean).
