@@ -6,3 +6,6 @@ pass 1:
 
 lisa-design:
 - The script tests run the script against a temp copy of scripts/ + src/ (it writes relative to its own directory), so tests never touch the committed src/api-version.json.
+
+lisa-selfreview:
+pass 2 (strict): approve, no findings. Non-lockfile diff is ~250 lines (CORE-SIZE-001 not hit).
