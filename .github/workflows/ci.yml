@@ -2,7 +2,8 @@ name: ci
 
 on:
   pull_request:
-    types: [opened, edited, synchronize, reopened]
+    # labeled/unlabeled re-run release-checks when release:major-approved changes.
+    types: [opened, edited, synchronize, reopened, labeled, unlabeled]
   push:
     branches: [main]
 
@@ -10,8 +11,8 @@ permissions: {}
 
 jobs:
   ci:
-    # Trial: pinned to the head of compliance-framework/workflows#7.
-    uses: compliance-framework/workflows/.github/workflows/ci-ui.yml@87edd2b700d6dc6de8d49c1f44e525dd39e4db31
+    # Pinned to the head of compliance-framework/workflows#12.
+    uses: compliance-framework/workflows/.github/workflows/ci-ui.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
     permissions:
       actions: read
       contents: read
@@ -19,13 +20,19 @@ jobs:
       security-events: write
     secrets: inherit
 
+  release-checks:
+    # Acts only on release-please--* PRs; skipped (counts as passing) elsewhere.
+    uses: compliance-framework/workflows/.github/workflows/release-checks.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    permissions:
+      contents: read
+
   notify:
-    needs: [ci]
+    needs: [ci, release-checks]
     if: failure()
-    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@87edd2b700d6dc6de8d49c1f44e525dd39e4db31
+    uses: compliance-framework/workflows/.github/workflows/notify-failure.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
     with:
       # Keep equal to the ref notify-failure.yml is called at.
-      workflows-ref: 87edd2b700d6dc6de8d49c1f44e525dd39e4db31
+      workflows-ref: 084cc5d5ee6a40455f84b4f3108cfb254654ae28
     permissions:
       actions: read
       contents: read

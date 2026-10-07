@@ -1,0 +1,19 @@
+name: release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    # Pinned to the head of compliance-framework/workflows#12.
+    uses: compliance-framework/workflows/.github/workflows/release-ui.yml@084cc5d5ee6a40455f84b4f3108cfb254654ae28
+    with:
+      images: '[{"name": "mock-ui", "dockerfile": "Dockerfile"}]'
+    permissions:
+      contents: read
+      packages: write
+    secrets: inherit
