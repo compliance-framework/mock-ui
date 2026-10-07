@@ -1,0 +1,2 @@
+lisa-selfreview:
+Self-review pass 1: approve, no findings. Repinned every compliance-framework/workflows SHA ref (uses: and workflows-ref:) from orphaned 084cc5d to branch ra/w1-s1-t05b-repo-settings-workflow, updated the 'Pinned to the head of workflows#12' comments that would otherwise be wrong, and added CHANGELOG.md + .release-please-manifest.json to .prettierignore (identical to #6's change, which this supersedes).
