@@ -15,7 +15,7 @@
     "sync:mock-api-version": "scripts/sync-mock-api-version.sh"
   },
   "engines": {
-    "npm": "^10.1",
+    "npm": "^12.0.0",
     "node": "^20"
   },
   "prettier": {
