@@ -1,0 +1,3 @@
+lisa-design:
+- Only `closed` is added to pull_request types in ci.yml; existing types, comments and the v1.3.0 workflow pins are unchanged (spec: no pin changes, no other files).
+- No job-level `if` was added: the shared ci-ui/release-checks workflows already skip on closed PRs, and notify-failure.yml needs the closed run to flip the needs-human card and close the CI incident.
