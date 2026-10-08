@@ -16,7 +16,7 @@ concurrency:
 jobs:
   preview:
     # Tracks compliance-framework/workflows main until v1 is tagged.
-    uses: compliance-framework/workflows/.github/workflows/preview.yml@main
+    uses: compliance-framework/workflows/.github/workflows/preview.yml@5a81b1ac6081babf702713afb497d5a4f5c662bf # v1.0.0
     with:
       kind: image
       on-main: true
