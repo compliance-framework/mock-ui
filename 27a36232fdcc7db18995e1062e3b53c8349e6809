@@ -1,2 +1,5 @@
 lisa-addressed:
 pass 1: CORE-DOC-001 README Releases list now describes cut-prerelease.yml (manual dispatch, vX.Y.Z-rcN from the open release PR's version, GitHub prerelease).
+
+lisa-selfreview:
+pass 2/4: approve, no findings (README fix verified; lint/format/test/build green).
