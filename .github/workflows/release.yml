@@ -10,7 +10,7 @@ permissions:
 jobs:
   release:
     # Tracks compliance-framework/workflows main until v1 is tagged.
-    uses: compliance-framework/workflows/.github/workflows/release-ui.yml@21aaac7c174aaf90abafecf1c90c30b238367d3d # v1.3.1
+    uses: compliance-framework/workflows/.github/workflows/release-ui.yml@ca987fae431ad10a65315b87ae87a5a579f817a9 # v1.3.2
     with:
       images: '[{"name": "mock-ui", "dockerfile": "Dockerfile"}]'
     permissions:
