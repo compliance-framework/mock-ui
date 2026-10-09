@@ -39,6 +39,8 @@ commit SHA:
   Merging it tags `vX.Y.Z` and publishes the GitHub release.
 - `release.yml`: a published release builds `ghcr.io/compliance-framework/mock-ui` and tags it
   `X.Y.Z`, `X.Y`, `X` and `latest` (a `-rcN` tag publishes only `X.Y.Z-rcN`).
+- `cut-prerelease.yml`: run by hand (`workflow_dispatch`), it tags `vX.Y.Z-rcN` on `main`, taking
+  the version from the open release PR, and publishes it as a GitHub prerelease.
 - `preview.yml`: pushes to `main` publish `:main` and `:sha-<7>`; a PR labelled `preview`
   publishes `:pr-<number>`.
 - `ci.yml` runs `release-checks.yml`, which only acts on `release-please--*` PRs.
