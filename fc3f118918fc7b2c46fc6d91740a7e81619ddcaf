@@ -1,0 +1,3 @@
+lisa-design:
+- cut-prerelease.yml is a byte-for-byte copy of mock-api's caller (pinned workflows SHA ec58cea, v1.3.0); no path/tag-prefix inputs, because mock-ui's release-please package is "." with include-component-in-tag false and its tags are v0.1.x, which are exactly the reusable workflow's defaults (path ".", tag-prefix "v").
+- The fix: change is a UI text string in src/main.ts (the only user-visible string that ships); it exists solely to make release-please open a release PR for the rc test. No test asserts this string, so no test changes.
