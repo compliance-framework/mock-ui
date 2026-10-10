@@ -25,9 +25,9 @@
     "arrowParens": "always"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.5",
+    "@eslint/js": "^10.0.0",
     "@types/node": "^20.19.43",
-    "eslint": "^9.39.5",
+    "eslint": "^10.0.0",
     "prettier": "^3.9.9",
     "typescript": "~5.9.0",
     "typescript-eslint": "^8.71.1",
