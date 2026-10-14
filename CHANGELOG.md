@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/compliance-framework/mock-ui/compare/v0.1.2...v0.1.3) (2026-10-14)
+
+
+### Bug Fixes
+
+* **deps:** bump mock-api to v0.1.2 ([#36](https://github.com/compliance-framework/mock-ui/issues/36)) ([ae29f1f](https://github.com/compliance-framework/mock-ui/commit/ae29f1fe4c1551cfdcad076881ab2ec5b38d39cc))
+* parenthesise the mock-api build note in the UI text ([#28](https://github.com/compliance-framework/mock-ui/issues/28)) ([efdf344](https://github.com/compliance-framework/mock-ui/commit/efdf34473d509a24df04931a72948dc8b1194477))
+
 ## [0.1.2](https://github.com/compliance-framework/mock-ui/compare/v0.1.1...v0.1.2) (2026-10-08)
 
 
